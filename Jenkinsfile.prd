@@ -18,7 +18,7 @@ PATH = "/usr/local/bin/:$PATH"
                 }
                 sh 'terraform init -input=false'
                 sh 'terraform workspace select ${environment}'
-                sh "terraform plan -input=false -out tfplan -var 'version=${params.version}' --var-file=vars.tfvars"
+                sh "terraform plan -input=false -out tfplan --var-file=vars.tfvars"
                 sh 'terraform show -no-color tfplan > tfplan.txt'
             }
         }
