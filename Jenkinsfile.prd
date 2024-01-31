@@ -20,7 +20,7 @@ PATH = "/usr/local/bin/:$PATH"
                 sh 'terraform workspace select ${environment}'
                 sh "terraform plan -input=false -out tfplan --var-file=vars.tfvars"
                 sh 'terraform show -no-color tfplan > tfplan.txt'
-                sh 'terraform graph -var-file=config/vars.tfvars | dot -Tpng > qa-graph.png'
+                sh 'terraform graph -var-file=vars.tfvars | dot -Tpng > qa-graph.png'
             }
         }
         stage('Approval') {
