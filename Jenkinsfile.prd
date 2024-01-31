@@ -8,6 +8,7 @@ pipeline {
     environment {
 GOOGLE_CREDENTIALS = credentials('terraform-sa-key-text')
 TF_IN_AUTOMATION      = '1'
+PATH = "/usr/local/bin/"
     }
     stages {
         stage('Plan') {
